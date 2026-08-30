@@ -1,0 +1,4850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Parteek Tushir | Full Stack Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<style>
+/* =========================================================
+   PARTEEK TUSHIR
+   FULL STACK DEVELOPER
+   FUTURISTIC PORTFOLIO
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cyan: #48e7ff;
+    --blue: #168cff;
+    --purple: #8d5cff;
+    --green: #54ff9b;
+    --white: #f4f8ff;
+    --text: #8793a3;
+    --dark: #020408;
+    --border: rgba(255,255,255,0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    background: #020408;
+    color: var(--white);
+
+    font-family: "Inter", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #020408;
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    z-index: -10;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0,190,255,0.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(20,90,255,0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(130,60,255,0.08),
+            transparent 25%
+        ),
+        #020408;
+}
+
+
+/* Grid */
+
+.grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent
+        );
+}
+
+
+/* Glow */
+
+.glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(110px);
+
+    pointer-events: none;
+}
+
+.glow-1 {
+    width: 450px;
+    height: 450px;
+
+    left: 35%;
+    top: 20%;
+
+    background: rgba(0,200,255,0.13);
+}
+
+.glow-2 {
+    width: 360px;
+    height: 360px;
+
+    right: 0;
+    bottom: 0;
+
+    background: rgba(120,60,255,0.12);
+}
+
+
+/* =========================================================
+   TOP STATUS
+========================================================= */
+
+.top-status {
+    position: fixed;
+
+    top: 22px;
+    left: 4%;
+    right: 4%;
+
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1.8px;
+
+    color: #697582;
+}
+
+.system-status,
+.location {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 8px var(--green),
+        0 0 18px rgba(84,255,155,0.5);
+
+    animation: statusBlink 1.4s infinite;
+}
+
+@keyframes statusBlink {
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.75);
+    }
+}
+
+.location i {
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.command-center {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1.25fr
+        0.9fr;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding:
+        70px
+        4%
+        65px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-panel {
+    position: relative;
+
+    z-index: 10;
+
+    animation:
+        profileIn 1s ease forwards;
+}
+
+@keyframes profileIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(-45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Label */
+
+.profile-label,
+.panel-title {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #66727f;
+}
+
+.profile-label span,
+.panel-title span {
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+========================================================= */
+
+.profile-photo {
+
+    position: relative;
+
+    width: 185px;
+    height: 225px;
+
+    padding: 7px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(72,231,255,0.3);
+
+    background:
+        rgba(255,255,255,0.02);
+
+    box-shadow:
+        0 0 35px rgba(0,180,255,0.08),
+        inset 0 0 30px rgba(0,200,255,0.04);
+
+    transition: 0.35s ease;
+}
+
+.profile-photo:hover {
+
+    border-color:
+        rgba(72,231,255,0.7);
+
+    box-shadow:
+        0 0 45px rgba(0,200,255,0.18);
+}
+
+.profile-photo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+        contrast(1.05)
+        saturate(0.9);
+}
+
+
+/* Scan */
+
+.scan-line {
+
+    position: absolute;
+
+    left: 7px;
+    right: 7px;
+
+    top: 10px;
+
+    height: 2px;
+
+    z-index: 5;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    box-shadow:
+        0 0 14px var(--cyan);
+
+    animation:
+        imageScan 3s linear infinite;
+}
+
+@keyframes imageScan {
+
+    0% {
+        top: 10px;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: calc(100% - 10px);
+        opacity: 0;
+    }
+}
+
+
+/* Corners */
+
+.photo-corner {
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    z-index: 8;
+}
+
+.top-left {
+
+    top: 0;
+    left: 0;
+
+    border-top:
+        2px solid var(--cyan);
+
+    border-left:
+        2px solid var(--cyan);
+}
+
+.top-right {
+
+    top: 0;
+    right: 0;
+
+    border-top:
+        2px solid var(--cyan);
+
+    border-right:
+        2px solid var(--cyan);
+}
+
+.bottom-left {
+
+    bottom: 0;
+    left: 0;
+
+    border-bottom:
+        2px solid var(--cyan);
+
+    border-left:
+        2px solid var(--cyan);
+}
+
+.bottom-right {
+
+    bottom: 0;
+    right: 0;
+
+    border-bottom:
+        2px solid var(--cyan);
+
+    border-right:
+        2px solid var(--cyan);
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.profile-panel h1 {
+
+    font-size:
+        clamp(43px, 4.5vw, 70px);
+
+    line-height: 0.9;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+}
+
+.profile-panel h1 span {
+
+    display: block;
+
+    color: var(--cyan);
+
+    text-shadow:
+        0 0 18px rgba(72,231,255,0.35),
+        0 0 50px rgba(72,231,255,0.1);
+}
+
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.role {
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 20px;
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    color: #c1ccd6;
+}
+
+.terminal-symbol {
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-text {
+
+    max-width: 450px;
+
+    margin-top: 18px;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.profile-actions {
+
+    display: flex;
+
+    gap: 11px;
+
+    margin-top: 25px;
+}
+
+.main-btn,
+.icon-btn {
+
+    border: none;
+
+    cursor: pointer;
+
+    color: white;
+
+    transition: 0.3s ease;
+}
+
+.main-btn {
+
+    padding: 13px 20px;
+
+    font-family: "Space Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1.3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #08bfe9,
+            #096dff
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(0,160,255,0.2);
+}
+
+.main-btn i {
+    margin-left: 8px;
+}
+
+.icon-btn {
+
+    width: 44px;
+    height: 44px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(72,231,255,0.22);
+}
+
+.main-btn:hover,
+.icon-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 0 32px
+        rgba(0,190,255,0.3);
+}
+
+
+/* =========================================================
+   SOCIALS
+========================================================= */
+
+.socials {
+
+    display: flex;
+
+    gap: 9px;
+
+    margin-top: 22px;
+}
+
+.socials a {
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: #707c89;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    transition: 0.3s ease;
+}
+
+.socials a:hover {
+
+    color: var(--cyan);
+
+    border-color:
+        rgba(72,231,255,0.5);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 0 20px
+        rgba(72,231,255,0.12);
+}
+
+
+/* =========================================================
+   CORE
+========================================================= */
+
+.core-panel {
+
+    position: relative;
+
+    height: 620px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.15s ease;
+
+    animation:
+        coreIn 1.1s ease forwards;
+}
+
+@keyframes coreIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.core-header {
+
+    position: absolute;
+
+    top: 5px;
+
+    width: 80%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #687481;
+}
+
+.core-line {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #27434d,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   DEVELOPER CORE
+========================================================= */
+
+.developer-core {
+
+    position: relative;
+
+    width: 510px;
+    height: 510px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Rings */
+
+.core-ring {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(72,231,255,0.18);
+}
+
+.ring-1 {
+
+    width: 430px;
+    height: 430px;
+
+    border-style: dashed;
+
+    animation:
+        rotate 24s linear infinite;
+}
+
+.ring-2 {
+
+    width: 330px;
+    height: 330px;
+
+    border-color:
+        rgba(140,80,255,0.22);
+
+    animation:
+        rotateReverse 17s linear infinite;
+}
+
+.ring-3 {
+
+    width: 235px;
+    height: 235px;
+
+    border-style: dashed;
+
+    border-color:
+        rgba(72,231,255,0.28);
+
+    animation:
+        rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateReverse {
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* =========================================================
+   CENTER CIRCLE
+========================================================= */
+
+.core-circle {
+
+    position: relative;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,200,255,0.17),
+            rgba(3,8,14,0.96) 67%
+        );
+
+    border:
+        1px solid
+        rgba(72,231,255,0.4);
+
+    box-shadow:
+        0 0 35px
+        rgba(0,200,255,0.18),
+
+        inset 0 0 40px
+        rgba(0,200,255,0.08);
+
+    animation:
+        corePulse 3s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+
+    50% {
+
+        transform: scale(1.05);
+
+        box-shadow:
+            0 0 55px
+            rgba(0,200,255,0.28),
+
+            inset 0 0 45px
+            rgba(0,200,255,0.12);
+    }
+}
+
+.core-circle::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -16px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(72,231,255,0.12);
+}
+
+.core-inner {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-family:
+        "Space Mono", monospace;
+
+    letter-spacing: 2px;
+}
+
+.core-inner i {
+
+    font-size: 32px;
+
+    color: var(--cyan);
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(72,231,255,0.7)
+        );
+}
+
+.core-inner span {
+
+    font-size: 10px;
+
+    color: #b7c5d0;
+}
+
+
+/* =========================================================
+   TECH NODES
+========================================================= */
+
+.tech-node {
+
+    position: absolute;
+
+    width: 78px;
+    height: 78px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    background:
+        rgba(4,9,14,0.9);
+
+    border:
+        1px solid
+        rgba(72,231,255,0.17);
+
+    backdrop-filter:
+        blur(10px);
+
+    color: #87939f;
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    transition: 0.35s ease;
+
+    animation:
+        nodeFloat 4s ease-in-out infinite;
+}
+
+.tech-node i {
+
+    font-size: 21px;
+
+    color: var(--cyan);
+}
+
+.tech-node:hover {
+
+    transform:
+        scale(1.13);
+
+    color: white;
+
+    border-color:
+        rgba(72,231,255,0.6);
+
+    box-shadow:
+        0 0 30px
+        rgba(0,190,255,0.18);
+}
+
+@keyframes nodeFloat {
+
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -8px;
+    }
+}
+
+
+/* Node positions */
+
+.node-html {
+    top: 50px;
+    left: 70px;
+}
+
+.node-css {
+    top: 35px;
+    right: 75px;
+}
+
+.node-js {
+
+    top: 50%;
+    right: 15px;
+
+    transform:
+        translateY(-50%);
+}
+
+.node-node {
+
+    bottom: 45px;
+    right: 80px;
+}
+
+.node-db {
+
+    bottom: 35px;
+    left: 80px;
+}
+
+.node-python {
+
+    top: 50%;
+    left: 15px;
+
+    transform:
+        translateY(-50%);
+}
+
+
+/* =========================================================
+   CORE CAPTION
+========================================================= */
+
+.core-caption {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: -8px;
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #687481;
+}
+
+.pulse {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 12px var(--cyan);
+
+    animation:
+        pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+
+    50% {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+}
+
+
+/* =========================================================
+   COMMAND PANEL
+========================================================= */
+
+.command-panel {
+
+    position: relative;
+
+    z-index: 20;
+
+    animation:
+        panelIn 1s ease forwards;
+}
+
+@keyframes panelIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================================================
+   COMMAND CARDS
+========================================================= */
+
+.command-card {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 76px;
+
+    display: grid;
+
+    grid-template-columns:
+        47px
+        1fr
+        20px;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 11px 13px;
+
+    margin-bottom: 10px;
+
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    background:
+        rgba(255,255,255,0.018);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.065);
+
+    transition: 0.3s ease;
+
+    overflow: hidden;
+}
+
+.command-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: var(--cyan);
+
+    transform: scaleY(0);
+
+    transition: 0.3s;
+}
+
+.command-card:hover {
+
+    transform:
+        translateX(-7px);
+
+    border-color:
+        rgba(72,231,255,0.32);
+
+    background:
+        rgba(0,190,255,0.045);
+
+    box-shadow:
+        0 0 28px
+        rgba(0,190,255,0.07);
+}
+
+.command-card:hover::before {
+    transform: scaleY(1);
+}
+
+.card-icon {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(72,231,255,0.15);
+
+    background:
+        rgba(0,180,255,0.025);
+}
+
+.card-icon i {
+
+    color: var(--cyan);
+
+    font-size: 17px;
+}
+
+.command-card small {
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 8px;
+
+    color: #46515c;
+}
+
+.command-card h3 {
+
+    margin:
+        2px 0 3px;
+
+    font-size: 13px;
+
+    letter-spacing: 0.8px;
+}
+
+.command-card p {
+
+    font-size: 10px;
+
+    color: #66717f;
+}
+
+.command-card .arrow {
+
+    color: #44505c;
+
+    font-size: 10px;
+
+    transition: 0.3s;
+}
+
+.command-card:hover .arrow {
+
+    color: var(--cyan);
+
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.terminal-bar {
+
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    min-height: 38px;
+
+    z-index: 200;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 4%;
+
+    background:
+        rgba(2,5,8,0.9);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.06);
+
+    backdrop-filter:
+        blur(15px);
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 9px;
+
+    color: #5e6975;
+}
+
+.terminal-green {
+    color: var(--green);
+    margin-right: 6px;
+}
+
+.terminal-blue {
+    color: var(--cyan);
+}
+
+.typing-command {
+
+    margin-left: 6px;
+
+    color: #84909c;
+
+    transition: 0.25s;
+}
+
+
+/* =========================================================
+   OVERLAY PANELS
+========================================================= */
+
+.overlay-panel {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 500;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(1,4,7,0.95);
+
+    backdrop-filter:
+        blur(25px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        scale(1.04);
+
+    transition:
+        0.4s ease;
+}
+
+.overlay-panel.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        scale(1);
+}
+
+
+/* =========================================================
+   OVERLAY CONTENT
+========================================================= */
+
+.overlay-content {
+
+    width:
+        min(800px, 94%);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,190,255,0.04),
+            rgba(255,255,255,0.015)
+        );
+
+    border:
+        1px solid
+        rgba(72,231,255,0.18);
+
+    box-shadow:
+        0 0 80px
+        rgba(0,170,255,0.07);
+
+    scrollbar-width: thin;
+    scrollbar-color: #194451 transparent;
+}
+
+.panel-number {
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--cyan);
+}
+
+.overlay-content h2 {
+
+    margin:
+        12px 0 17px;
+
+    font-size:
+        clamp(32px, 5vw, 60px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.overlay-content h2 span {
+    color: var(--cyan);
+}
+
+.panel-line {
+
+    width: 75px;
+
+    height: 2px;
+
+    margin-bottom: 25px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 15px
+        rgba(72,231,255,0.5);
+}
+
+.overlay-content > p {
+
+    color: #7d8996;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.close-panel {
+
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(72,231,255,0.2);
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+}
+
+.close-panel:hover {
+
+    transform:
+        rotate(90deg);
+
+    color: var(--cyan);
+
+    border-color:
+        rgba(72,231,255,0.55);
+
+    box-shadow:
+        0 0 25px
+        rgba(0,190,255,0.18);
+}
+
+
+/* =========================================================
+   ABOUT INFO
+========================================================= */
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.info-grid div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 17px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    background:
+        rgba(255,255,255,0.015);
+}
+
+.info-grid small {
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 8px;
+
+    color: #52606c;
+
+    letter-spacing: 1px;
+}
+
+.info-grid strong {
+
+    font-size: 11px;
+
+    color: #d5dde5;
+
+}
+
+
+/* =========================================================
+   STACK
+========================================================= */
+
+.stack-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.stack-grid div {
+
+    min-height: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    background:
+        rgba(255,255,255,0.015);
+
+    color: #8b97a3;
+
+    font-size: 10px;
+
+    transition: 0.3s;
+}
+
+.stack-grid i {
+
+    font-size: 24px;
+
+    color: var(--cyan);
+}
+
+.stack-grid div:hover {
+
+    transform:
+        translateY(-5px);
+
+    color: white;
+
+    border-color:
+        rgba(72,231,255,0.4);
+
+    box-shadow:
+        0 0 25px
+        rgba(0,190,255,0.08);
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-list {
+    margin-top: 25px;
+}
+
+.project-item {
+
+    display: grid;
+
+    grid-template-columns:
+        45px
+        1fr
+        25px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px 10px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    transition: 0.3s;
+}
+
+.project-item > span {
+
+    color: var(--cyan);
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 10px;
+}
+
+.project-item h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.project-item p {
+
+    margin: 0;
+
+    font-size: 11px;
+}
+
+.project-item > i {
+
+    color: #53606d;
+
+    font-size: 11px;
+}
+
+.project-item:hover {
+
+    padding-left: 18px;
+
+    background:
+        rgba(0,190,255,0.025);
+}
+
+.project-item:hover > i {
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.service-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 13px;
+
+    margin-top: 25px;
+}
+
+.service-list div {
+
+    padding: 24px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    background:
+        rgba(255,255,255,0.015);
+
+    transition: 0.3s;
+}
+
+.service-list i {
+
+    display: block;
+
+    font-size: 23px;
+
+    color: var(--cyan);
+
+    margin-bottom: 14px;
+}
+
+.service-list h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.service-list p {
+
+    margin: 0;
+
+    font-size: 11px;
+}
+
+.service-list div:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(72,231,255,0.35);
+
+    box-shadow:
+        0 0 28px
+        rgba(0,180,255,0.07);
+}
+
+
+/* =========================================================
+   CONTACT BUTTONS
+========================================================= */
+
+.contact-button {
+
+    width: 100%;
+
+    min-height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 13px 17px;
+
+    margin-top: 11px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.018);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: 0.3s ease;
+}
+
+.contact-button > i {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 18px;
+
+    color: var(--cyan);
+
+    border:
+        1px solid
+        rgba(72,231,255,0.15);
+
+    background:
+        rgba(0,180,255,0.025);
+}
+
+.contact-button div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.contact-button strong {
+
+    font-size: 12px;
+
+    letter-spacing: 0.7px;
+}
+
+.contact-button small {
+
+    font-size: 10px;
+
+    color: #6f7b87;
+}
+
+.contact-button:hover {
+
+    transform:
+        translateX(7px);
+
+    border-color:
+        rgba(72,231,255,0.4);
+
+    background:
+        rgba(0,190,255,0.04);
+
+    box-shadow:
+        0 0 25px
+        rgba(0,190,255,0.07);
+}
+
+
+/* WhatsApp */
+
+.whatsapp-button i {
+    color: #4cff96;
+}
+
+.whatsapp-button:hover {
+    border-color:
+        rgba(76,255,150,0.4);
+}
+
+
+/* Call */
+
+.call-button i {
+    color: #5ee7ff;
+}
+
+
+/* Resume */
+
+.resume-button {
+
+    font-family:
+        "Inter", sans-serif;
+
+    border:
+        1px solid
+        rgba(141,92,255,0.25);
+}
+
+.resume-button > i {
+    color: #a276ff;
+}
+
+.resume-button:hover {
+
+    border-color:
+        rgba(141,92,255,0.55);
+
+    box-shadow:
+        0 0 28px
+        rgba(141,92,255,0.1);
+}
+
+
+/* Email */
+
+.email-button > i {
+    color: var(--cyan);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1180px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .command-center {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        padding:
+            80px 5%
+            70px;
+    }
+
+    .core-panel {
+
+        grid-column:
+            1 / -1;
+
+        order: 3;
+
+        height: 520px;
+    }
+
+    .developer-core {
+        transform: scale(0.82);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .top-status {
+
+        top: 14px;
+
+        left: 18px;
+        right: 18px;
+
+        font-size: 8px;
+    }
+
+    .location {
+        display: none;
+    }
+
+
+    .command-center {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding:
+            65px 18px
+            70px;
+
+        gap: 35px;
+    }
+
+
+    .profile-panel {
+
+        text-align: center;
+    }
+
+
+    .profile-photo {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .profile-panel h1 {
+
+        font-size: 45px;
+    }
+
+
+    .role {
+
+        justify-content: center;
+
+        font-size: 10px;
+    }
+
+
+    .intro-text {
+
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 12px;
+    }
+
+
+    .profile-actions,
+    .socials {
+
+        justify-content: center;
+    }
+
+
+    .core-panel {
+
+        width: 100%;
+
+        height: 430px;
+
+        overflow: hidden;
+    }
+
+
+    .developer-core {
+
+        transform: scale(0.66);
+    }
+
+
+    .command-panel {
+        width: 100%;
+    }
+
+
+    .terminal-time {
+        display: none;
+    }
+
+
+    .overlay-panel {
+        padding: 15px;
+    }
+
+
+    .overlay-content {
+
+        width: 96%;
+
+        max-height: 88vh;
+
+        padding:
+            32px 18px;
+    }
+
+
+    .close-panel {
+
+        top: 14px;
+        right: 14px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .stack-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .service-list {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .info-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .profile-panel h1 {
+        font-size: 39px;
+    }
+
+    .profile-photo {
+        width: 155px;
+        height: 190px;
+    }
+
+    .core-panel {
+        height: 380px;
+    }
+
+    .developer-core {
+        transform: scale(0.56);
+    }
+
+    .command-card {
+        min-height: 72px;
+    }
+
+    .command-card h3 {
+        font-size: 12px;
+    }
+
+    .command-card p {
+        font-size: 9px;
+    }
+
+    .overlay-content h2 {
+        font-size: 35px;
+    }
+
+    .terminal-bar {
+        font-size: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+
+    background:
+        rgba(72,231,255,0.25);
+
+    color: white;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #020408;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #173a45;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cyan);
+}
+
+/* =========================================================
+   RESUME SECTION
+========================================================= */
+
+.resume-section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 110px 5% 100px;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0,190,255,0.045),
+            transparent 45%
+        );
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.05);
+
+}
+
+
+/* Header */
+
+.resume-header {
+
+    max-width: 850px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.resume-number {
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--cyan);
+}
+
+.resume-header h2 {
+
+    margin-top: 14px;
+
+    font-size:
+        clamp(40px, 6vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+}
+
+.resume-header h2 span {
+
+    color: var(--cyan);
+
+    text-shadow:
+        0 0 25px
+        rgba(72,231,255,0.25);
+
+}
+
+.resume-header p {
+
+    max-width: 600px;
+
+    margin:
+        18px auto 0;
+
+    color: #71808e;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* Main Container */
+
+.resume-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr
+        0.75fr;
+
+    gap: 35px;
+
+    align-items: stretch;
+
+}
+
+
+/* =========================================================
+   PDF PREVIEW
+========================================================= */
+
+.resume-preview {
+
+    position: relative;
+
+    padding: 10px;
+
+    background:
+        rgba(255,255,255,0.018);
+
+    border:
+        1px solid
+        rgba(72,231,255,0.16);
+
+    box-shadow:
+        0 0 50px
+        rgba(0,180,255,0.05);
+
+    overflow: hidden;
+}
+
+.resume-preview::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(72,231,255,0.06),
+            transparent 25%,
+            transparent 75%,
+            rgba(141,92,255,0.05)
+        );
+
+}
+
+
+/* Top bar */
+
+.resume-top-bar {
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 13px;
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #596572;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.06);
+
+}
+
+.resume-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+.resume-dot {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 10px
+        var(--green);
+
+}
+
+
+/* PDF */
+
+.resume-frame {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 650px;
+
+    background: #111;
+
+    overflow: hidden;
+
+}
+
+.resume-frame iframe {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   RESUME INFO
+========================================================= */
+
+.resume-info {
+
+    position: relative;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,190,255,0.045),
+            rgba(255,255,255,0.012)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+}
+
+
+.resume-icon {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border:
+        1px solid
+        rgba(72,231,255,0.25);
+
+    background:
+        rgba(0,190,255,0.04);
+
+    color: var(--cyan);
+
+    font-size: 23px;
+
+    box-shadow:
+        0 0 25px
+        rgba(0,190,255,0.08);
+
+}
+
+
+.resume-small-title {
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #596673;
+
+}
+
+
+.resume-info h3 {
+
+    margin:
+        12px 0 18px;
+
+    font-size:
+        clamp(35px, 4vw, 52px);
+
+    line-height: 0.92;
+
+    letter-spacing: -2px;
+
+}
+
+
+.resume-info h3 span {
+
+    color: var(--cyan);
+
+}
+
+
+.resume-info > p {
+
+    margin-bottom: 25px;
+
+    color: #788592;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+/* Details */
+
+.resume-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.resume-details div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    background:
+        rgba(255,255,255,0.015);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.055);
+
+}
+
+
+.resume-details i {
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cyan);
+
+}
+
+
+.resume-details span {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    color: #c3ccd4;
+
+    font-size: 10px;
+
+}
+
+
+.resume-details small {
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    color: #4f5d69;
+
+}
+
+
+/* =========================================================
+   RESUME BUTTONS
+========================================================= */
+
+.resume-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 10px;
+
+}
+
+
+.resume-view-btn,
+.resume-download-btn {
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    font-family:
+        "Space Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.resume-view-btn {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #08bfe9,
+            #096dff
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(0,180,255,0.12);
+
+}
+
+
+.resume-download-btn {
+
+    color: var(--cyan);
+
+    background:
+        rgba(255,255,255,0.02);
+
+    border:
+        1px solid
+        rgba(72,231,255,0.25);
+
+}
+
+
+.resume-view-btn:hover,
+.resume-download-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 0 30px
+        rgba(0,190,255,0.18);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .resume-container {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .resume-frame {
+
+        height: 600px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .resume-section {
+
+        padding:
+            80px 18px;
+
+    }
+
+    .resume-header {
+
+        margin-bottom: 30px;
+
+    }
+
+    .resume-header h2 {
+
+        font-size: 42px;
+
+    }
+
+    .resume-frame {
+
+        height: 500px;
+
+    }
+
+    .resume-info {
+
+        padding: 25px 20px;
+
+    }
+
+    .resume-buttons {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+</style>
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background">
+
+    <div class="grid"></div>
+
+    <div class="glow glow-1"></div>
+
+    <div class="glow glow-2"></div>
+
+    <div class="particles"></div>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOP STATUS
+===================================================== -->
+
+<div class="top-status">
+
+    <div class="system-status">
+
+        <span class="status-dot"></span>
+
+        SYSTEM ONLINE
+
+    </div>
+
+
+    <div class="location">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        JHINJHOLI, SONIPAT, HARYANA
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MAIN COMMAND CENTER
+===================================================== -->
+
+<main class="command-center">
+
+
+    <!-- =================================================
+         PROFILE
+    ================================================== -->
+
+    <section class="profile-panel">
+
+
+        <div class="profile-label">
+
+            <span>01</span>
+
+            IDENTITY
+
+        </div>
+
+
+
+        <!-- PROFILE IMAGE -->
+
+        <div class="profile-photo">
+
+            <div class="scan-line"></div>
+
+            <img src="WhatsApp Image 2026-08-30 at 11.41.01 AM.jpeg"
+                 alt="Parteek Tushir">
+
+            <div class="photo-corner top-left"></div>
+
+            <div class="photo-corner top-right"></div>
+
+            <div class="photo-corner bottom-left"></div>
+
+            <div class="photo-corner bottom-right"></div>
+
+        </div>
+
+
+
+        <!-- NAME -->
+
+        <h1>
+
+            PARTEEK
+
+            <span>TUSHIR</span>
+
+        </h1>
+
+
+
+        <!-- PROFESSION -->
+
+        <div class="role">
+
+            <span class="terminal-symbol">&gt;_</span>
+
+            <span class="profession">
+
+                FULL STACK DEVELOPER
+
+            </span>
+
+        </div>
+
+
+
+        <!-- INTRO -->
+
+        <p class="intro-text">
+
+            I'm a Computer and Web Development enthusiast
+            focused on creating attractive, responsive and
+            interactive web experiences using modern
+            development technologies.
+
+        </p>
+
+
+
+        <!-- ACTIONS -->
+
+        <div class="profile-actions">
+
+
+            <button class="main-btn"
+                    onclick="openPanel('contact')">
+
+                LET'S BUILD
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </button>
+
+
+
+            <button class="icon-btn"
+                    onclick="downloadResume()"
+                    title="Download Resume">
+
+                <i class="fa-solid fa-download"></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- SOCIAL LINKS -->
+
+        <div class="socials">
+
+
+            <!-- GitHub -->
+
+            <a href="https://github.com/dashboard"
+               title="GitHub"
+               >
+
+                <i class="fa-brands fa-github"></i>
+
+            </a>
+
+
+
+            <!-- LinkedIn -->
+
+            <a href="https://www.linkedin.com/feed/"
+               title="LinkedIn"
+               >
+
+                <i class="fa-brands fa-linkedin-in"></i>
+
+            </a>
+
+
+
+            <!-- Instagram -->
+
+            <a href="https://www.instagram.com/"
+               title="Instagram"
+               >
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         DEVELOPER CORE
+    ================================================== -->
+
+    <section class="core-panel">
+
+
+        <div class="core-header">
+
+            <span>CORE</span>
+
+            <div class="core-line"></div>
+
+            <span>ACTIVE</span>
+
+        </div>
+
+
+
+        <div class="developer-core">
+
+
+            <!-- RINGS -->
+
+            <div class="core-ring ring-1"></div>
+
+            <div class="core-ring ring-2"></div>
+
+            <div class="core-ring ring-3"></div>
+
+
+
+            <!-- CENTER -->
+
+            <div class="core-circle">
+
+                <div class="core-inner">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    <span>DEV</span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HTML -->
+
+            <div class="tech-node node-html">
+
+                <i class="fa-brands fa-html5"></i>
+
+                <span>HTML</span>
+
+            </div>
+
+
+
+            <!-- CSS -->
+
+            <div class="tech-node node-css">
+
+                <i class="fa-brands fa-css3-alt"></i>
+
+                <span>CSS</span>
+
+            </div>
+
+
+
+            <!-- JAVASCRIPT -->
+
+            <div class="tech-node node-js">
+
+                <i class="fa-brands fa-js"></i>
+
+                <span>JS</span>
+
+            </div>
+
+
+
+            <!-- NODE -->
+
+            <div class="tech-node node-node">
+
+                <i class="fa-brands fa-node-js"></i>
+
+                <span>NODE</span>
+
+            </div>
+
+
+
+            <!-- DATABASE -->
+
+            <div class="tech-node node-db">
+
+                <i class="fa-solid fa-database"></i>
+
+                <span>DATABASE</span>
+
+            </div>
+
+
+
+            <!-- PYTHON -->
+
+            <div class="tech-node node-python">
+
+                <i class="fa-brands fa-python"></i>
+
+                <span>PYTHON</span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="core-caption">
+
+            <span class="pulse"></span>
+
+            BUILDING DIGITAL SYSTEMS
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         COMMAND CENTER
+    ================================================== -->
+
+    <section class="command-panel">
+
+
+        <div class="panel-title">
+
+            <span>02</span>
+
+            COMMAND CENTER
+
+        </div>
+
+
+
+        <!-- ABOUT -->
+
+        <button class="command-card"
+                onclick="openPanel('about')">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-user-astronaut"></i>
+
+            </div>
+
+
+            <div>
+
+                <small>01</small>
+
+                <h3>ABOUT ME</h3>
+
+                <p>Know the developer</p>
+
+            </div>
+
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </button>
+
+
+
+        <!-- SKILLS -->
+
+        <button class="command-card"
+                onclick="openPanel('skills')">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-microchip"></i>
+
+            </div>
+
+
+            <div>
+
+                <small>02</small>
+
+                <h3>TECH STACK</h3>
+
+                <p>Skills & technologies</p>
+
+            </div>
+
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </button>
+
+
+
+        <!-- PROJECTS -->
+
+        <button class="command-card"
+                onclick="openPanel('projects')">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-cubes"></i>
+
+            </div>
+
+
+            <div>
+
+                <small>03</small>
+
+                <h3>PROJECTS</h3>
+
+                <p>Things I've built</p>
+
+            </div>
+
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </button>
+
+
+
+        <!-- SERVICES -->
+
+        <button class="command-card"
+                onclick="openPanel('services')">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-terminal"></i>
+
+            </div>
+
+
+            <div>
+
+                <small>04</small>
+
+                <h3>SERVICES</h3>
+
+                <p>What I can build</p>
+
+            </div>
+
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </button>
+
+
+
+        <!-- CONTACT -->
+
+        <button class="command-card"
+                onclick="openPanel('contact')">
+
+            <div class="card-icon">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </div>
+
+
+            <div>
+
+                <small>05</small>
+
+                <h3>CONTACT</h3>
+
+                <p>Call, WhatsApp or Email</p>
+
+            </div>
+
+
+            <i class="fa-solid fa-chevron-right arrow"></i>
+
+        </button>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     TERMINAL
+===================================================== -->
+
+<div class="terminal-bar">
+
+
+    <div>
+
+        <span class="terminal-green">●</span>
+
+        parteek@portfolio
+
+        <span>:</span>
+
+        <span class="terminal-blue">~</span>
+
+        $
+
+        <span class="typing-command">
+
+            ./build_future
+
+        </span>
+
+    </div>
+
+
+
+    <div class="terminal-time"
+         id="clock">
+
+        00:00:00
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     ABOUT PANEL
+===================================================== -->
+
+<div class="overlay-panel"
+     id="about">
+
+
+    <button class="close-panel"
+            onclick="closePanel('about')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+
+    <div class="overlay-content">
+
+
+        <span class="panel-number">
+
+            01 / IDENTITY
+
+        </span>
+
+
+        <h2>
+
+            ABOUT <span>ME</span>
+
+        </h2>
+
+
+        <div class="panel-line"></div>
+
+
+
+        <p>
+
+            I'm Parteek Tushir from Jhinjholi,
+            Sonipat, Haryana.
+
+        </p>
+
+
+        <p>
+
+            I'm a Computer and Web Development
+            enthusiast and a Full Stack Developer
+            focused on building attractive and
+            responsive websites.
+
+        </p>
+
+
+        <p>
+
+            I'm a quick learner, hardworking,
+            self-motivated and interested in learning
+            new technologies.
+
+        </p>
+
+
+        <div class="info-grid">
+
+
+            <div>
+
+                <small>QUALIFICATION</small>
+
+                <strong>12th PASS</strong>
+
+            </div>
+
+
+            <div>
+
+                <small>FIELD</small>
+
+                <strong>WEB DEVELOPMENT</strong>
+
+            </div>
+
+
+            <div>
+
+                <small>LOCATION</small>
+
+                <strong>SONIPAT, HARYANA</strong>
+
+            </div>
+
+
+            <div>
+
+                <small>EXPERIENCE</small>
+
+                <strong>FRESHER</strong>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SKILLS PANEL
+===================================================== -->
+
+<div class="overlay-panel"
+     id="skills">
+
+
+    <button class="close-panel"
+            onclick="closePanel('skills')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+
+    <div class="overlay-content">
+
+
+        <span class="panel-number">
+
+            02 / TECHNOLOGY
+
+        </span>
+
+
+        <h2>
+
+            TECH <span>STACK</span>
+
+        </h2>
+
+
+        <div class="panel-line"></div>
+
+
+
+        <div class="stack-grid">
+
+
+            <div>
+
+                <i class="fa-brands fa-html5"></i>
+
+                HTML5
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-brands fa-css3-alt"></i>
+
+                CSS3
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-brands fa-js"></i>
+
+                JavaScript
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-brands fa-react"></i>
+
+                React
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-brands fa-node-js"></i>
+
+                Node.js
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-brands fa-python"></i>
+
+                Python
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-server"></i>
+
+                Express
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-database"></i>
+
+                Database
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-table"></i>
+
+                MS Excel
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-mobile-screen"></i>
+
+                Responsive Design
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PROJECTS PANEL
+===================================================== -->
+
+<div class="overlay-panel"
+     id="projects">
+
+
+    <button class="close-panel"
+            onclick="closePanel('projects')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+
+    <div class="overlay-content">
+
+
+        <span class="panel-number">
+
+            03 / WORK
+
+        </span>
+
+
+        <h2>
+
+            SELECTED <span>PROJECTS</span>
+
+        </h2>
+
+
+        <div class="panel-line"></div>
+
+
+
+        <div class="project-list">
+
+
+            <div class="project-item">
+
+                <span>01</span>
+
+
+                <div>
+
+                    <h3>Hotel Room</h3>
+
+                    <p>
+                        in my hotel all
+                        this are provided
+                    </p>
+
+                </div>
+
+                      <a href="https://partiktushir.github.io/Grand-Vista-Hotel-Restaurant/">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                   </a>
+            </div>
+
+
+
+            <div class="project-item">
+
+                <span>02</span>
+
+
+                <div>
+
+                    <h3>Billing site</h3>
+
+                    <p>
+                        parteek shope site
+                         bill genret and print
+                    </p>
+
+                </div>
+                <a href="https://partiktushir.github.io/biling-site/">
+                  
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+            </div>
+
+
+
+            <div class="project-item">
+
+                <span>03</span>
+
+
+                <div>
+
+                    <h3>Boot strap </h3>
+
+                    <p>
+                        bootstrap most important Things
+                         introduction
+                    </p>
+
+                </div>
+
+                 <a href="https://partiktushir.github.io/bootsrap/">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                 </a>
+            </div>
+
+
+
+            <div class="project-item">
+
+                <span>04</span>
+
+
+                <div>
+
+                    <h3>Music Website</h3>
+
+                    <p>
+                        Interactive website for a
+                        music artist.
+                    </p>
+
+                </div>
+
+
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SERVICES PANEL
+===================================================== -->
+
+<div class="overlay-panel"
+     id="services">
+
+
+    <button class="close-panel"
+            onclick="closePanel('services')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+
+    <div class="overlay-content">
+
+
+        <span class="panel-number">
+
+            04 / CAPABILITIES
+
+        </span>
+
+
+        <h2>
+
+            WHAT I <span>BUILD</span>
+
+        </h2>
+
+
+        <div class="panel-line"></div>
+
+
+
+        <div class="service-list">
+
+
+            <div>
+
+                <i class="fa-solid fa-code"></i>
+
+                <h3>Frontend Development</h3>
+
+                <p>
+                    Attractive and responsive
+                    website interfaces.
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <i class="fa-solid fa-server"></i>
+
+                <h3>Backend Development</h3>
+
+                <p>
+                    Functional backend systems
+                    and web application logic.
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <i class="fa-solid fa-database"></i>
+
+                <h3>Database Systems</h3>
+
+                <p>
+                    Connecting websites with
+                    structured data systems.
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <h3>Full Stack Projects</h3>
+
+                <p>
+                    Complete web applications
+                    from frontend to backend.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CONTACT PANEL
+===================================================== -->
+
+<div class="overlay-panel"
+     id="contact">
+
+
+    <button class="close-panel"
+            onclick="closePanel('contact')">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+
+    <div class="overlay-content">
+
+
+        <span class="panel-number">
+
+            05 / CONNECTION
+
+        </span>
+
+
+        <h2>
+
+            LET'S <span>CONNECT</span>
+
+        </h2>
+
+
+        <div class="panel-line"></div>
+
+
+
+        <p>
+
+            Interested in hiring me or working
+            together? Choose any option below.
+
+        </p>
+
+
+
+        <!-- CALL -->
+
+        <a href="tel:+919582101438"
+           class="contact-button call-button">
+
+            <i class="fa-solid fa-phone"></i>
+
+            <div>
+
+                <strong>CALL ME</strong>
+
+                <small>
+
+                    +91 95821 01438
+
+                </small>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- WHATSAPP -->
+
+        <a href="https://wa.me/919582101438?text=Hey%2C%20I%20really%20liked%20your%20portfolio.%20I%20would%20like%20to%20talk%20to%20you%20about%20a%20hiring%20opportunity."
+           target="_blank"
+           class="contact-button whatsapp-button">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            <div>
+
+                <strong>WHATSAPP</strong>
+
+                <small>
+
+                    Chat directly with me
+
+                </small>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- EMAIL -->
+
+        <a href="mailto:patiktushir4@gmail.com"
+           class="contact-button email-button">
+
+            <i class="fa-regular fa-envelope"></i>
+
+            <div>
+
+                <strong>EMAIL ME</strong>
+
+                <small>
+
+                    patiktushir4@gmail.com
+
+                </small>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- RESUME -->
+
+        <button class="contact-button resume-button"
+        onclick="downloadResume()">
+
+    <i class="fa-solid fa-file-arrow-down"></i>
+
+    <div>
+        <strong>DOWNLOAD RESUME</strong>
+        <small>View my professional resume</small>
+    </div>
+
+</button>
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     RESUME SECTION
+===================================================== -->
+
+<section class="resume-section" id="resume">
+
+    <div class="resume-header">
+
+        <span class="resume-number">06 / DOCUMENT</span>
+
+        <h2>
+            MY <span>RESUME</span>
+        </h2>
+
+        <p>
+            Want to know more about my skills, education
+            and projects? Check out my complete resume.
+        </p>
+
+    </div>
+
+
+    <div class="resume-container">
+
+
+        <!-- Resume Preview -->
+
+        <div class="resume-preview">
+
+            <div class="resume-top-bar">
+
+                <div class="resume-status">
+
+                    <span class="resume-dot"></span>
+
+                    RESUME.PDF
+
+                </div>
+
+                <span>PART-001</span>
+
+            </div>
+
+
+            <div class="resume-frame">
+
+                <iframe
+                    src="Parteek_Tushir_Resume (1).pdf"
+                    title="Parteek Tushir Resume">
+                </iframe>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Resume Information -->
+
+        <div class="resume-info">
+
+            <div class="resume-icon">
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+            </div>
+
+
+            <span class="resume-small-title">
+                PROFESSIONAL PROFILE
+            </span>
+
+
+            <h3>
+                PARTEEK<br>
+                <span>TUSHIR</span>
+            </h3>
+
+
+            <p>
+                Full Stack Developer focused on creating
+                attractive, responsive and interactive
+                web experiences.
+            </p>
+
+
+            <div class="resume-details">
+
+                <div>
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <span>
+                        <small>QUALIFICATION</small>
+                        12th Pass
+                    </span>
+                </div>
+
+
+                <div>
+                    <i class="fa-solid fa-code"></i>
+
+                    <span>
+                        <small>FIELD</small>
+                        Computer & Web Development
+                    </span>
+                </div>
+
+
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        <small>LOCATION</small>
+                        Jhinjholi, Sonipat, Haryana
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="resume-buttons">
+
+                <!-- Open PDF -->
+
+                <a
+                    href="Parteek_Tushir_Resume (1).pdf"
+                    target="_blank"
+                    class="resume-view-btn">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    VIEW FULL RESUME
+
+                </a>
+
+
+                <!-- Download -->
+
+                <a
+                    href="Parteek_Tushir_Resume (1).pdf"
+                    download="Parteek-Tushir-Resume.pdf"
+                    class="resume-download-btn">
+
+                    <i class="fa-solid fa-download"></i>
+
+                    DOWNLOAD PDF
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<script>
+    
+/* =========================================================
+   PARTEEK TUSHIR
+   FULL STACK DEVELOPER
+   FUTURISTIC PORTFOLIO JS
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const body = document.body;
+
+    const background =
+        document.querySelector(".background");
+
+    const corePanel =
+        document.querySelector(".core-panel");
+
+    const core =
+        document.querySelector(".developer-core");
+
+    const clock =
+        document.getElementById("clock");
+
+    const cards =
+        document.querySelectorAll(".command-card");
+
+    const panels =
+        document.querySelectorAll(".overlay-panel");
+
+
+    /* =====================================================
+       YOUR DETAILS
+    ===================================================== */
+
+    const PHONE = "9582101438";
+
+    const EMAIL = "patiktushir4@gmail.com";
+
+    const WHATSAPP_MESSAGE =
+        "Hey, I really liked your portfolio. I would like to talk to you about a hiring opportunity.";
+
+    const RESUME =
+        "Parteek-Tushir-Resume.pdf";
+
+
+    /* =====================================================
+       LIVE CLOCK
+    ===================================================== */
+
+    function updateClock() {
+
+        if (!clock) return;
+
+        const now = new Date();
+
+        const h =
+            String(now.getHours()).padStart(2, "0");
+
+        const m =
+            String(now.getMinutes()).padStart(2, "0");
+
+        const s =
+            String(now.getSeconds()).padStart(2, "0");
+
+        clock.textContent =
+            `${h}:${m}:${s}`;
+    }
+
+    updateClock();
+
+    setInterval(updateClock, 1000);
+
+
+    /* =====================================================
+       MOUSE LIGHT
+    ===================================================== */
+
+    const mouseLight =
+        document.createElement("div");
+
+    mouseLight.className =
+        "mouse-light";
+
+    document.body.appendChild(mouseLight);
+
+
+    document.addEventListener("mousemove", (e) => {
+
+        mouseLight.style.left =
+            `${e.clientX}px`;
+
+        mouseLight.style.top =
+            `${e.clientY}px`;
+
+    });
+
+
+    /* =====================================================
+       3D CORE
+    ===================================================== */
+
+    document.addEventListener("mousemove", (e) => {
+
+        if (!corePanel) return;
+
+        if (window.innerWidth <= 760) return;
+
+        const x =
+            e.clientX / window.innerWidth - 0.5;
+
+        const y =
+            e.clientY / window.innerHeight - 0.5;
+
+        const rotateX =
+            y * -5;
+
+        const rotateY =
+            x * 5;
+
+        corePanel.style.transform =
+            `perspective(1200px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)`;
+    });
+
+
+    document.addEventListener("mouseleave", () => {
+
+        if (corePanel) {
+
+            corePanel.style.transform =
+                "perspective(1200px) rotateX(0) rotateY(0)";
+        }
+
+    });
+
+
+    /* =====================================================
+       RANDOM DIGITAL PARTICLES
+    ===================================================== */
+
+    if (background) {
+
+        for (let i = 0; i < 70; i++) {
+
+            const particle =
+                document.createElement("span");
+
+            particle.className =
+                "digital-particle";
+
+            const size =
+                Math.random() * 3 + 1;
+
+            particle.style.width =
+                `${size}px`;
+
+            particle.style.height =
+                `${size}px`;
+
+            particle.style.left =
+                `${Math.random() * 100}%`;
+
+            particle.style.top =
+                `${Math.random() * 100}%`;
+
+            particle.style.animationDelay =
+                `${Math.random() * 5}s`;
+
+            particle.style.animationDuration =
+                `${3 + Math.random() * 7}s`;
+
+            background.appendChild(particle);
+        }
+    }
+
+
+    /* =====================================================
+       OPEN PANEL
+    ===================================================== */
+
+    window.openPanel = function (id) {
+
+        const panel =
+            document.getElementById(id);
+
+        if (!panel) return;
+
+        panels.forEach(p => {
+
+            p.classList.remove("active");
+
+        });
+
+        panel.classList.add("active");
+
+        body.style.overflow =
+            "hidden";
+
+        if (navigator.vibrate) {
+
+            navigator.vibrate(15);
+
+        }
+    };
+
+
+    /* =====================================================
+       CLOSE PANEL
+    ===================================================== */
+
+    window.closePanel = function (id) {
+
+        const panel =
+            document.getElementById(id);
+
+        if (!panel) return;
+
+        panel.classList.remove("active");
+
+        setTimeout(() => {
+
+            if (
+                !document.querySelector(
+                    ".overlay-panel.active"
+                )
+            ) {
+
+                body.style.overflow =
+                    window.innerWidth <= 760
+                        ? "auto"
+                        : "hidden";
+            }
+
+        }, 400);
+    };
+
+
+    /* =====================================================
+       ESC CLOSE
+    ===================================================== */
+
+    document.addEventListener("keydown", (e) => {
+
+        if (e.key === "Escape") {
+
+            panels.forEach(panel => {
+
+                panel.classList.remove("active");
+
+            });
+
+            body.style.overflow =
+                window.innerWidth <= 760
+                    ? "auto"
+                    : "hidden";
+        }
+    });
+
+
+    /* =====================================================
+       CLICK OUTSIDE PANEL
+    ===================================================== */
+
+    panels.forEach(panel => {
+
+        panel.addEventListener("click", (e) => {
+
+            if (e.target === panel) {
+
+                panel.classList.remove("active");
+
+                body.style.overflow =
+                    window.innerWidth <= 760
+                        ? "auto"
+                        : "hidden";
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       CARD RIPPLE
+    ===================================================== */
+
+    cards.forEach(card => {
+
+        card.addEventListener("click", (e) => {
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const ripple =
+                document.createElement("span");
+
+            ripple.className =
+                "card-ripple";
+
+            ripple.style.left =
+                `${e.clientX - rect.left}px`;
+
+            ripple.style.top =
+                `${e.clientY - rect.top}px`;
+
+            card.appendChild(ripple);
+
+            setTimeout(() => {
+
+                ripple.remove();
+
+            }, 700);
+        });
+
+    });
+
+
+    /* =====================================================
+       TECH NODE EFFECT
+    ===================================================== */
+
+    const nodes =
+        document.querySelectorAll(".tech-node");
+
+    nodes.forEach(node => {
+
+        node.addEventListener("mouseenter", () => {
+
+            if (core) {
+
+                core.classList.add(
+                    "core-highlight"
+                );
+            }
+
+        });
+
+        node.addEventListener("mouseleave", () => {
+
+            if (core) {
+
+                core.classList.remove(
+                    "core-highlight"
+                );
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       PROFILE PHOTO 3D
+    ===================================================== */
+
+    const photo =
+        document.querySelector(".profile-photo");
+
+
+    if (photo) {
+
+        photo.addEventListener("mousemove", (e) => {
+
+            if (window.innerWidth <= 760) return;
+
+            const rect =
+                photo.getBoundingClientRect();
+
+            const x =
+                e.clientX - rect.left;
+
+            const y =
+                e.clientY - rect.top;
+
+            const rotateY =
+                ((x / rect.width) - 0.5) * 12;
+
+            const rotateX =
+                ((y / rect.height) - 0.5) * -12;
+
+            photo.style.transform =
+                `perspective(700px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 scale(1.04)`;
+        });
+
+
+        photo.addEventListener("mouseleave", () => {
+
+            photo.style.transform =
+                "perspective(700px) rotateX(0) rotateY(0) scale(1)";
+        });
+
+    }
+
+
+    /* =====================================================
+       RESUME DOWNLOAD
+    ===================================================== */
+
+    window.downloadResume = function () {
+
+        const link =
+            document.createElement("a");
+
+        link.href = RESUME;
+
+        link.download =
+            RESUME;
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        link.remove();
+
+    };
+
+
+    /* =====================================================
+       WHATSAPP
+       AUTOMATIC MESSAGE
+    ===================================================== */
+
+    window.openWhatsApp = function () {
+
+        const message =
+            encodeURIComponent(
+                WHATSAPP_MESSAGE
+            );
+
+        const url =
+            `https://wa.me/91${PHONE}?text=${message}`;
+
+        window.open(
+            url,
+            "_blank"
+        );
+    };
+
+
+    /* =====================================================
+       EMAIL
+    ===================================================== */
+
+    window.openEmail = function () {
+
+        window.location.href =
+            `mailto:${EMAIL}`;
+    };
+
+
+    /* =====================================================
+       CALL
+    ===================================================== */
+
+    window.callMe = function () {
+
+        window.location.href =
+            `tel:+91${PHONE}`;
+    };
+
+
+    /* =====================================================
+       SOCIAL LINK MESSAGE
+    ===================================================== */
+
+    window.showGithubMessage = function (e) {
+
+        e.preventDefault();
+
+        alert(
+            "GitHub profile link abhi add nahi kiya gaya hai.\n\nApna GitHub profile link bhej do, main directly connect kar dunga."
+        );
+    };
+
+
+    window.showLinkedinMessage = function (e) {
+
+        e.preventDefault();
+
+        alert(
+            "LinkedIn profile link abhi add nahi kiya gaya hai.\n\nApna LinkedIn link bhej do."
+        );
+    };
+
+
+    window.showInstagramMessage = function (e) {
+
+        e.preventDefault();
+
+        alert(
+            "Instagram profile link abhi add nahi kiya gaya hai.\n\nApna Instagram username/link bhej do."
+        );
+    };
+
+
+    /* =====================================================
+       TYPING TERMINAL
+    ===================================================== */
+
+    const terminal =
+        document.querySelector(".typing-command");
+
+
+    if (terminal) {
+
+        const commands = [
+
+            "./build_future",
+
+            "./create_web",
+
+            "./write_code",
+
+            "./solve_problem",
+
+            "./deploy_project",
+
+            "./full_stack"
+
+        ];
+
+        let index = 0;
+
+
+        setInterval(() => {
+
+            terminal.style.opacity =
+                "0";
+
+
+            setTimeout(() => {
+
+                terminal.textContent =
+                    commands[index];
+
+                terminal.style.opacity =
+                    "1";
+
+                index =
+                    (index + 1) %
+                    commands.length;
+
+            }, 250);
+
+        }, 3000);
+
+    }
+
+
+    /* =====================================================
+       KEYBOARD NAVIGATION
+    ===================================================== */
+
+    document.addEventListener("keydown", (e) => {
+
+        // A = About
+
+        if (
+            e.key.toLowerCase() === "a" &&
+            !e.ctrlKey &&
+            !e.altKey &&
+            !e.metaKey
+        ) {
+
+            openPanel("about");
+        }
+
+
+        // S = Skills
+
+        if (
+            e.key.toLowerCase() === "s" &&
+            !e.ctrlKey &&
+            !e.altKey &&
+            !e.metaKey
+        ) {
+
+            openPanel("skills");
+        }
+
+
+        // P = Projects
+
+        if (
+            e.key.toLowerCase() === "p" &&
+            !e.ctrlKey &&
+            !e.altKey &&
+            !e.metaKey
+        ) {
+
+            openPanel("projects");
+        }
+
+
+        // C = Contact
+
+        if (
+            e.key.toLowerCase() === "c" &&
+            !e.ctrlKey &&
+            !e.altKey &&
+            !e.metaKey
+        ) {
+
+            openPanel("contact");
+        }
+
+    });
+
+
+    /* =====================================================
+       PAGE READY
+    ===================================================== */
+
+    setTimeout(() => {
+
+        body.classList.add(
+            "system-ready"
+        );
+
+    }, 200);
+
+
+    /* =====================================================
+       CONSOLE
+    ===================================================== */
+
+    console.log(
+        "%c PARTEEK TUSHIR ",
+        "background:#06141a;color:#48e7ff;font-size:20px;font-weight:bold;padding:10px;"
+    );
+
+    console.log(
+        "%c FULL STACK DEVELOPER ",
+        "color:#54ff9b;font-size:13px;font-weight:bold;"
+    );
+
+    console.log(
+        "%c SYSTEM ONLINE ✓ ",
+        "color:#48e7ff;font-size:12px;"
+    );
+
+});
+
+function downloadResume() {
+
+    const link = document.createElement("a");
+
+    link.href = "Parteek-Tushir-Resume.pdf";
+
+    link.download = "Parteek-Tushir-Resume.pdf";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    link.remove();
+}
+</script>
+
+
+</body>
+
+</html>
